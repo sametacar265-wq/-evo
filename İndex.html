@@ -1,0 +1,405 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Şevval'im ❤️</title>
+
+<style>
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    min-height: 100vh;
+    background: #ffe6ee;
+    font-family: Georgia, serif;
+    color: #641f35;
+    overflow-x: hidden;
+}
+
+/* KALPLER */
+.heart {
+    position: fixed;
+    top: -40px;
+    z-index: 0;
+    font-size: 22px;
+    animation: dusme linear infinite;
+    opacity: 0.7;
+    pointer-events: none;
+}
+
+@keyframes dusme {
+    from {
+        transform: translateY(-50px) rotate(0deg);
+    }
+
+    to {
+        transform: translateY(110vh) rotate(360deg);
+    }
+}
+
+/* ANA SAYFA */
+.ana-sayfa {
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 25px;
+    position: relative;
+    z-index: 1;
+}
+
+.kutu {
+    width: 100%;
+    max-width: 800px;
+    background: rgba(255,255,255,0.65);
+    border-radius: 30px;
+    padding: 50px 25px;
+    text-align: center;
+    box-shadow: 0 15px 50px rgba(100,31,53,0.15);
+}
+
+.kucuk-yazi {
+    font-size: 15px;
+    letter-spacing: 4px;
+    font-style: italic;
+    margin-bottom: 15px;
+}
+
+h1 {
+    color: #8d2948;
+    font-size: clamp(50px, 12vw, 90px);
+    font-style: italic;
+    font-weight: bold;
+    margin-bottom: 25px;
+}
+
+.cizgi {
+    width: 80px;
+    height: 2px;
+    background: #8d2948;
+    margin: 0 auto 30px;
+}
+
+.ana-yazi {
+    font-size: clamp(18px, 3vw, 23px);
+    line-height: 1.9;
+    font-style: italic;
+}
+
+.alt-yazi {
+    margin-top: 25px;
+    font-style: italic;
+    font-size: 17px;
+}
+
+/* BUTONLAR */
+.butonlar {
+    margin-top: 40px;
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    flex-wrap: wrap;
+}
+
+button {
+    border: none;
+    background: #8d2948;
+    color: white;
+    padding: 15px 25px;
+    border-radius: 30px;
+    font-family: Georgia, serif;
+    font-size: 17px;
+    font-style: italic;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+button:hover {
+    background: #a83a5b;
+    transform: translateY(-3px);
+}
+
+/* İÇ SAYFALAR */
+.sayfa {
+    display: none;
+    min-height: 100vh;
+    padding: 30px 20px;
+    position: relative;
+    z-index: 2;
+}
+
+.sayfa-kutu {
+    width: 100%;
+    max-width: 800px;
+    margin: 30px auto;
+    padding: 40px 25px;
+    background: rgba(255,255,255,0.7);
+    border-radius: 30px;
+    text-align: center;
+    box-shadow: 0 15px 50px rgba(100,31,53,0.15);
+}
+
+.sayfa h2 {
+    color: #8d2948;
+    font-size: 45px;
+    font-style: italic;
+    margin-bottom: 30px;
+}
+
+.icerik {
+    background: rgba(255,255,255,0.55);
+    border-radius: 20px;
+    padding: 25px;
+    margin-bottom: 20px;
+    font-size: 19px;
+    line-height: 1.9;
+    font-style: italic;
+}
+
+.baslik {
+    color: #8d2948;
+    font-size: 25px;
+    font-weight: bold;
+    margin-bottom: 15px;
+}
+
+.geri {
+    background: transparent;
+    color: #8d2948;
+    border: 1px solid #8d2948;
+}
+
+/* TELEFON */
+@media (max-width: 600px) {
+
+    .ana-sayfa {
+        padding: 15px;
+    }
+
+    .kutu {
+        padding: 40px 18px;
+    }
+
+    .butonlar {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    button {
+        width: 90%;
+    }
+
+    .sayfa-kutu {
+        padding: 30px 18px;
+    }
+
+    .sayfa h2 {
+        font-size: 38px;
+    }
+
+    .icerik {
+        font-size: 17px;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<!-- KALPLER -->
+<div class="heart" style="left:5%; animation-duration:14s;">❤️</div>
+<div class="heart" style="left:15%; animation-duration:18s;">💕</div>
+<div class="heart" style="left:27%; animation-duration:16s;">❤️</div>
+<div class="heart" style="left:40%; animation-duration:20s;">💗</div>
+<div class="heart" style="left:53%; animation-duration:15s;">❤️</div>
+<div class="heart" style="left:66%; animation-duration:19s;">💕</div>
+<div class="heart" style="left:79%; animation-duration:17s;">❤️</div>
+<div class="heart" style="left:92%; animation-duration:21s;">💗</div>
+
+
+<!-- ANA SAYFA -->
+
+<div class="ana-sayfa" id="anaSayfa">
+
+    <div class="kutu">
+
+        <div class="kucuk-yazi">
+            Sana özel bir dünya
+        </div>
+
+        <h1>Şevval'im ❤️</h1>
+
+        <div class="cizgi"></div>
+
+        <div class="ana-yazi">
+            Sen geldin, kalbim kendine bir yuva buldu,<br>
+            Gözlerin en karanlık geceme sabah oldu.<br>
+            Ne zaman adını ansam içim umutla doluyor,<br>
+            Aşk dediğim her şey, sende anlam buluyor.
+        </div>
+
+        <div class="alt-yazi">
+            Seni anlatmaya kelimeler yetmez...
+        </div>
+
+        <div class="butonlar">
+
+            <button onclick="ac('siirler')">
+                Şiirler 🍷
+            </button>
+
+            <button onclick="ac('akrostis')">
+                Akrostiş 📜
+            </button>
+
+            <button onclick="ac('gunluk')">
+                Günlük 📔
+            </button>
+
+        </div>
+
+    </div>
+
+</div>
+
+
+<!-- ŞİİRLER -->
+
+<div class="sayfa" id="siirler">
+
+    <div class="sayfa-kutu">
+
+        <h2>Şiirler 🍷</h2>
+
+        <div class="icerik">
+
+            <div class="baslik">
+                Aşk
+            </div>
+
+            Aşk, adını kalbime yazdığım ilk cümle,<br>
+            Gözlerine baktığımda susuyor bütün dünya.<br>
+            Sen yanımdayken zaman bile yavaşlıyor,<br>
+            Kalbim yalnızca senin için atıyor.
+        </div>
+
+        <div class="icerik">
+
+            <div class="baslik">
+                Bir Tek Sen
+            </div>
+
+            Bir tek elini tutmak yetiyor bana,<br>
+            Bir tek gülüşün yetiyor mutlu olmama.<br>
+            Herkes kendi hikâyesini yaşarken,<br>
+            Benim en güzel hikâyem sen oluyorsun.
+        </div>
+
+        <button class="geri" onclick="anaSayfa()">
+            ← Geri
+        </button>
+
+    </div>
+
+</div>
+
+
+<!-- AKROSTİŞ -->
+
+<div class="sayfa" id="akrostis">
+
+    <div class="sayfa-kutu">
+
+        <h2>Şevval 📜</h2>
+
+        <div class="icerik">
+
+            <b>Ş</b>imdi hayatımda güzel olan ne varsa seninle,<br>
+            <b>E</b>llerini tuttuğumda huzur buluyor kalbim,<br>
+            <b>V</b>arlığın hayatımdaki en güzel tesadüf,<br>
+            <b>V</b>azgeçmek istemediğim güzel hikâyemsin,<br>
+            <b>A</b>şkınla her gün yeniden gülümsüyorum,<br>
+            <b>L</b>ütfen hep hayatımda kal. ❤️
+
+        </div>
+
+        <button class="geri" onclick="anaSayfa()">
+            ← Geri
+        </button>
+
+    </div>
+
+</div>
+
+
+<!-- GÜNLÜK -->
+
+<div class="sayfa" id="gunluk">
+
+    <div class="sayfa-kutu">
+
+        <h2>Günlük 📔</h2>
+
+        <div class="icerik">
+
+            <div class="baslik">
+                Sana Bir Not
+            </div>
+
+            Bugün de aklımdan geçen ilk insan sendin.<br><br>
+
+            Bazen sana söylemek istediğim o kadar çok
+            şey oluyor ki kelimeler yetersiz kalıyor.<br><br>
+
+            Ama bildiğim bir şey var...<br><br>
+
+            Hayatıma girdiğin için mutluyum.<br>
+            Gülüşünü gördüğüm için mutluyum.<br>
+            Seni sevdiğim için mutluyum. ❤️
+
+        </div>
+
+        <button class="geri" onclick="anaSayfa()">
+            ← Geri
+        </button>
+
+    </div>
+
+</div>
+
+
+<script>
+
+function ac(sayfa) {
+
+    document.getElementById("anaSayfa").style.display = "none";
+
+    document.getElementById("siirler").style.display = "none";
+    document.getElementById("akrostis").style.display = "none";
+    document.getElementById("gunluk").style.display = "none";
+
+    document.getElementById(sayfa).style.display = "block";
+
+    window.scrollTo(0, 0);
+}
+
+function anaSayfa() {
+
+    document.getElementById("siirler").style.display = "none";
+    document.getElementById("akrostis").style.display = "none";
+    document.getElementById("gunluk").style.display = "none";
+
+    document.getElementById("anaSayfa").style.display = "flex";
+
+    window.scrollTo(0, 0);
+}
+
+</script>
+
+</body>
+</html>
